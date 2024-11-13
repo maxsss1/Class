@@ -1,56 +1,67 @@
 <?php
 namespace App;
 
-class Book {
+class Book
+{
     private string $title;
     private string $author;
     private int $publishedYear;
     private string $genre;
 
-   
-    public function __construct(string $title, string $author, int $publishedYear, string $genre) {
+
+    public function __construct(string $title, string $author, int $publishedYear, string $genre)
+    {
         $this->title = $title;
         $this->author = $author;
         $this->publishedYear = $publishedYear;
         $this->genre = $genre;
     }
 
-    public function getTitle(): string {
+    public function getTitle(): string
+    {
         return $this->title;
     }
 
-    public function setTitle(string $title): void {
+    public function setTitle(string $title): void
+    {
         $this->title = $title;
     }
 
-    public function getAuthor(): string {
+    public function getAuthor(): string
+    {
         return $this->author;
     }
 
-    public function setAuthor(string $author): void {
+    public function setAuthor(string $author): void
+    {
         $this->author = $author;
     }
 
-    public function getPublishedYear(): int {
+    public function getPublishedYear(): int
+    {
         return $this->publishedYear;
     }
 
-    public function setPublishedYear(int $publishedYear): void {
+    public function setPublishedYear(int $publishedYear): void
+    {
         $this->publishedYear = $publishedYear;
     }
 
-    public function getGenre(): string {
+    public function getGenre(): string
+    {
         return $this->genre;
     }
 
-    public function setGenre(string $genre): void {
+    public function setGenre(string $genre): void
+    {
         $this->genre = $genre;
     }
 
-    public function getBookInfo(): string {
+    public function getBookInfo(): string
+    {
         return "Название: " . $this->title . "\n" .
-               "Автор: " . $this->author . "\n" .
-               "Год публикации: " . $this->publishedYear . "\n" .
-               "Жанр: " . $this->genre;
+            "Автор: " . $this->author . "\n" .
+            "Год публикации: " . $this->publishedYear . "\n" .
+            "Жанр: " . $this->genre;
     }
 }
