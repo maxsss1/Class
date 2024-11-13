@@ -4,7 +4,8 @@ require __DIR__ . '/vendor/autoload.php';
 use App\Book;
 use App\Library;
 
-function getInput(string $prompt): string {
+function getInput(string $prompt): string
+{
     echo $prompt;
     return trim(fgets(STDIN));
 }
@@ -22,17 +23,17 @@ while (true) {
     $choice = trim(fgets(STDIN));
 
     switch ($choice) {
-        case '1': 
+        case '1':
             $title = getInput("Введите название книги: ");
             $author = getInput("Введите автора книги: ");
-            $publishedYear = (int)getInput("Введите год публикации книги: ");
+            $publishedYear = (int) getInput("Введите год публикации книги: ");
             $genre = getInput("Введите жанр книги: ");
             $book = new Book($title, $author, $publishedYear, $genre);
             $library->addBook($book);
             echo "Книга добавлена!\n";
             break;
 
-        case '2': 
+        case '2':
             $title = getInput("Введите название книги для удаления: ");
             if ($library->removeBookByTitle($title)) {
                 echo "Книга '$title' удалена.\n";
@@ -41,7 +42,7 @@ while (true) {
             }
             break;
 
-        case '3': 
+        case '3':
             $author = getInput("Введите имя автора: ");
             $foundBooks = $library->findBooksByAuthor($author);
             if (count($foundBooks) > 0) {
@@ -54,7 +55,7 @@ while (true) {
             }
             break;
 
-        case '4': 
+        case '4':
             echo "Все книги в библиотеке:\n";
             $allBooks = $library->listAllBooks();
             if (count($allBooks) > 0) {
@@ -66,7 +67,7 @@ while (true) {
             }
             break;
 
-        case '5': 
+        case '5':
             echo "До свидания!\n";
             exit;
 
